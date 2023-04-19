@@ -42,6 +42,9 @@ public class ShipBattleField {
                     System.out.printf("%s is not an int%n", scanner.nextLine());
                 }
             }
+        System.out.println();
+        System.out.println(currentPlayerName + "'s battle field.");
+        printField(currentPlayerField);
         System.out.println(currentPlayerName + " is winner");
 
     }

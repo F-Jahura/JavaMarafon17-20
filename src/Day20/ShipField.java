@@ -10,7 +10,7 @@ public class ShipField {
         int y;
         int position;
         int shipSize;
-        for (int k = 0; k < 10; k++) {
+        for (int k = 0; k < 2; k++) {
 
             while (true) {
                 try {
@@ -67,8 +67,8 @@ public class ShipField {
                     playerField[x][y+b] = '1';
                 }
             }
+            printField(playerField);
         }
-        printField(playerField);
     }
 
     public static int freeSpace(int x, int y, int position, int shipSize, int[][] playerField){
