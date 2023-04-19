@@ -10,7 +10,7 @@ public class ShipField {
         int y;
         int position;
         int shipSize;
-        for (int k = 0; k < 2; k++) {
+        for (int k = 0; k < 10; k++) {
 
             while (true) {
                 try {
