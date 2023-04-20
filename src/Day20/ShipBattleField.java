@@ -50,9 +50,9 @@ public class ShipBattleField {
     }
 
     public static int shotField(int[][] playerField, int[][] battleField, int xShot, int yShot){
-        if (playerField[xShot][yShot] == '1'){
-            playerField[xShot][yShot] = '#';
-            battleField[xShot][yShot] = '#';
+        if (playerField[yShot][xShot] == '1'){
+            playerField[yShot][xShot] = '#';
+            battleField[yShot][xShot] = '#';
             System.out.println("Good shot");
             return 1;
         }

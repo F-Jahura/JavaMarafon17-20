@@ -59,12 +59,12 @@ public class ShipField {
 
             if (position == 1){
                 for (int a = 0; a < shipSize; a++){
-                    playerField[x+a][y] = '1';
+                    playerField[y][x+a] = '1';
                 }
             }
             if (position == 2){
                 for (int b = 0; b < shipSize; b++){
-                    playerField[x][y+b] = '1';
+                    playerField[y+b][x] = '1';
                 }
             }
             printField(playerField);
@@ -73,22 +73,24 @@ public class ShipField {
 
     public static int freeSpace(int x, int y, int position, int shipSize, int[][] playerField){
         if (position == 1){
-            for (int i = 0; i < shipSize-1; i++){
-                if (playerField[x+i][y] == '1' || playerField[x+i+1][y] == '1' || playerField[x+i-1][y] == '1' ||
-                        playerField[x+i][y+1] == '1' || playerField[x+i][y-1] == '1' || (x+i) > 9 || (x+i) < 0){
+            for (int j = 0; j < shipSize-1; j++){
+                if (playerField[y][x+j] == '1' || playerField[y+1][x+j] == '1' || playerField[y-1][x+j] == '1' ||
+                        playerField[y][x+j+1] == '1' || playerField[y][x-1] == '1' || (x+j) > 9 || (x+j) < 0){
                     return -1;
                 }
             }
         }
 
+
         if (position == 2){
-            for (int j = 0; j < shipSize-1; j++){
-                if (playerField[x][y+j] == '1' || playerField[x+1][y] == '1' || playerField[x-1][y] == '1' ||
-                        playerField[x][y+j+1] == '1' || playerField[x][y+j-1] == '1' || (y+j) > 9 || (y+j) < 0){
+            for (int i = 0; i < shipSize-1; i++){
+                if (playerField[y+i][x] == '1' || playerField[y+i][x+1] == '1' || playerField[y+i][x-1] == '1' ||
+                        playerField[y+i+1][x] == '1' || playerField[y-1][x] == '1' || (y+i) > 9 || (y+i) < 0){
                     return -1;
                 }
             }
         }
+
         return 0;
     }
 
